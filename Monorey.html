@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Monorey Tienda</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --primary: #ff4400;
-      --primary-light: #ff6a21;
-      --price-color: #e60012;
-    }
-    body { background: #fffaf5; font-family: "Segoe UI","PingFang SC",sans-serif; }
-    header { background: linear-gradient(to right,#ff4400,#ff6a21); color: white; }
-    .btn-primary { background: var(--primary); color:white; font-weight:600; transition:.2s; }
-    .btn-primary:hover { background: var(--primary-light); transform:scale(1.05); }
-    .product-card { border:1px solid #f2f2f2; transition:.2s; }
-    .product-card:hover { transform: translateY(-5px); box-shadow:0 6px 18px rgba(0,0,0,.12); }
-  </style>
+<meta charset="UTF-8">
+<title>Monorey Tienda</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root {
+--primary: #ff4400;
+--primary-light: #ff6a21;
+--price-color: #e60012;
+}
+body { background: #fffaf5; font-family: "Segoe UI","PingFang SC",sans-serif; }
+header { background: linear-gradient(to right,#ff4400,#ff6a21); color: white; }
+.btn-primary { background: var(--primary); color:white; font-weight:600; transition:.2s; }
+.btn-primary:hover { background: var(--primary-light); transform:scale(1.05); }
+.product-card { border:1px solid #f2f2f2; transition:.2s; }
+.product-card:hover { transform: translateY(-5px); box-shadow:0 6px 18px rgba(0,0,0,.12); }
+</style>
 </head>
 <body>
+
   <!-- 顶部导航 -->
-  <header class="p-4 shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-      <h1 class="text-2xl font-bold">🛍 Monorey Tienda</h1>
-      <div class="flex flex-1 max-w-xl">
-        <input id="search-input" type="text" placeholder="Buscar productos..."
-          class="flex-1 px-3 py-2 rounded-l-lg text-gray-700 border border-gray-300" />
-        <button onclick="searchProducts()" class="px-4 py-2 rounded-r-lg btn-primary">Buscar</button>
-      </div>
-      <button onclick="toggleCart()" class="px-4 py-2 rounded-lg btn-primary">
-        🛒 Carrito (<span id="cart-count">0</span>)
-      </button>
+ <header class="p-4 shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+
+    <!-- 🔥 这里放 Logo + 店名 -->
+    <div class="flex items-center gap-2">
+     <img src="https://i.postimg.cc/dVZgRVJG/logo-no-bg.png"
+     alt="Monorey Logo"
+     class="h-14 w-auto rounded-lg">
+      <h1 class="text-2xl font-bold">Monorey Tienda</h1>
     </div>
-  </header>
+
+    <!-- 搜索框 -->
+    <div class="flex flex-1 max-w-xl">
+      <input id="search-input" type="text" placeholder="Buscar productos..."
+        class="flex-1 px-3 py-2 rounded-l-lg text-gray-700 border border-gray-300" />
+      <button onclick="searchProducts()" class="px-4 py-2 rounded-r-lg btn-primary">Buscar</button>
+    </div>
+
+    <!-- 购物车按钮 -->
+    <button onclick="toggleCart()" class="px-4 py-2 rounded-lg btn-primary">
+      🛒 Carrito (<span id="cart-count">0</span>)
+    </button>
+  </div>
+</header>
+
 
   <!-- 主体布局：左侧分类 + 右侧商品 -->
   <div class="max-w-7xl mx-auto flex mt-6 gap-6 px-4">
@@ -45,6 +58,8 @@
         <li><a href="#NuevaEsfera" class="block px-3 py-1 rounded hover:bg-orange-100">🆕 Nueva esfera</a></li>
         <li><a href="#Lamparas" class="block px-3 py-1 rounded hover:bg-orange-100">💡 Lámparas</a></li>
         <li><a href="#Planchas" class="block px-3 py-1 rounded hover:bg-orange-100">🔥 Planchas</a></li>
+        <li><a href="#Cocinar" class="block px-3 py-1 rounded hover:bg-orange-100">🍳 Cocinar</a></li>
+      </ul>
       </ul>
     </aside>
 
@@ -89,7 +104,7 @@ const categories = [
     { id: 6, name: "Vaso 30oz Yeti", price: 120, img: "https://i.postimg.cc/MKjCx0s2/2025-08-25-214829.png" },
     { id: 7, name: "Vaso 20oz Yeti con Taza", price: 120, img: "https://i.postimg.cc/WbLvdfqb/2025-08-25-215147.png" },
     { id: 8, name: "Vaso 40oz Stanley con Taza", price: 210, img: "https://i.postimg.cc/c4NpxgPv/2025-08-25-215329.png" },
-    { id: 9, name: "Vaso 40oz Stanley con Taza", price: 210, img: "https://i.postimg.cc/3YC6jwPZ/2025-08-25-215613.png" },
+    { id: 9, name: "Vaso 24oz con Taza ", price: 110, img: "https://i.postimg.cc/3YC6jwPZ/2025-08-25-215613.png" },
     { id: 10, name: "Vaso 40oz", price: 160, img: "https://i.postimg.cc/D70gWyF0/2025-08-25-215847.png" },
     { id: 11, name: "Vaso 500ml", price: 130, img: "https://i.postimg.cc/J0dHqVfg/2025-08-25-220039.png"},
     { id: 13, name: "Vaso 20oz Yeti", price: 115, img: "https://i.postimg.cc/1tv8m13t/2025-08-25-220246.png" },
@@ -174,6 +189,22 @@ const categories = [
     { id: 80, name: "Plancha", price: 90, img: "https://i.postimg.cc/9MtWgSgP/2025-08-26-095619.png" },
     { id: 81, name: "Plancha", price: 210, img: "https://i.postimg.cc/3RLqwFk5/2025-08-26-095759.png" }
   ]}
+  ,   
+  { 
+    name: "Cocinar", 
+    products: [
+      { id: 82, name: "batidora eléctrica de mano", price: 140, img: "https://i.postimg.cc/5t65QX1M/2025-08-26-155201.png" },
+      { id: 83, name: "Cortador De Verduras", price: 100, img: "https://i.postimg.cc/T1XnsQbR/2025-08-26-155400.png" },
+      { id: 84, name: "Mini Wafflera Eléctrica En Forma De Corazón", price: 160, img: "https://i.postimg.cc/W1tqXxyG/2025-08-26-155558.png" },
+      { id: 85, name: "chocolatera eléctrica", price: 200, img: "https://i.postimg.cc/x8xTm1nW/2025-08-26-155752.png" },
+      { id: 86, name: "Taza medidora digital con escala", price: 150, img: "https://i.postimg.cc/NMbghj95/2025-08-26-155930.png" },
+      { id: 87, name: "estufa de gas portátil", price: 290, img: "https://i.postimg.cc/j2LYGQYF/2025-08-26-160112.png" },
+      { id: 88, name: "Mini Molino Moledor De Café", price: 130, img: "https://i.postimg.cc/ht86Z37G/2025-08-26-160330.png" },
+      { id: 89, name: "Sartén Eléctrico Plancha Multifuncional Cocina Yonsa", price: 140, img: "https://i.postimg.cc/05T9LFrG/2025-08-26-160509.png" },
+      { id: 90, name: "Mini Mopa Portátil Plegable Multiuso Hogar", price: 40, img: "https://i.postimg.cc/GtdnpwD6/2025-08-26-160914.png" },
+      { id: 91, name: "Hielera Cubetera Cubeta Hielo Facil Ice Verano De Silicona", price: 90, img: "https://i.postimg.cc/DySBbpcN/2025-08-26-161145.png" }
+    ]
+  }
 ];
 function renderCategories(filter=""){
   const container=document.getElementById("categories");
